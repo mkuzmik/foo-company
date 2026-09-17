@@ -54,6 +54,11 @@ nav a {
   font-size: 0.9rem;
   color: var(--charcoal);
 }
+nav a.nav-current {
+  font-weight: 700;
+  color: var(--amber);
+  border-bottom: 2px solid var(--amber);
+}
 .header-actions {
   display: flex;
   align-items: center;

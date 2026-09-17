@@ -25,6 +25,16 @@
     + '</header>';
   document.write(html);
 
+  var currentFile = location.pathname.split('/').pop() || 'index.html';
+  var navAnchors = document.querySelectorAll('#nav-links a');
+  navAnchors.forEach(function (a) {
+    var hrefFile = a.getAttribute('href').split('#')[0].split('/').pop();
+    if (hrefFile === currentFile) {
+      a.setAttribute('aria-current', 'page');
+      a.classList.add('nav-current');
+    }
+  });
+
   var toggle = document.getElementById('nav-toggle');
   var navLinks = document.getElementById('nav-links');
   if (toggle && navLinks) {
