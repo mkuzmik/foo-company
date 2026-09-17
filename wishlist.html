@@ -55,8 +55,8 @@
       row.innerHTML =
         '<div class="cart-item-icon">' + item.icon + '</div>' +
         '<div class="cart-item-info"><h3>' + item.name + '</h3><div class="cart-item-price">' + window.RavenCart.formatPrice(item.price) + '</div></div>' +
-        '<button class="btn wishlist-move-to-cart" type="button" data-id="' + item.id + '" data-name="' + item.name + '" data-price="' + item.price + '" data-icon="' + item.icon + '">Move to cart</button>' +
-        '<button class="cart-remove" type="button" data-id="' + item.id + '" aria-label="Remove from wishlist">&times;</button>';
+        '<button class="btn wishlist-move-to-cart" type="button" data-id="' + item.id + '" data-name="' + item.name + '" data-price="' + item.price + '" data-icon="' + item.icon + '" aria-label="Move ' + item.name + ' to cart">Move to cart</button>' +
+        '<button class="cart-remove" type="button" data-id="' + item.id + '" aria-label="Remove ' + item.name + ' from wishlist">&times;</button>';
       itemsEl.appendChild(row);
     });
   }
