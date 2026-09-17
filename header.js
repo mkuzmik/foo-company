@@ -18,6 +18,7 @@
     + '    <a href="#contact">Contact</a>'
     + '  </nav>'
     + '  <div class="header-actions">'
+    + '    <a href="' + base + '/wishlist.html" class="cart-link" aria-label="View wishlist"><span aria-hidden="true">♡</span><span id="wishlist-badge" class="cart-badge">0</span></a>'
     + '    <a href="' + base + '/cart.html" class="cart-link" aria-label="View cart"><span aria-hidden="true">🛒</span><span id="cart-badge" class="cart-badge">0</span></a>'
     + '    <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">&#9776;</button>'
     + '  </div>'
