@@ -39,6 +39,11 @@
   color: #66695a;
   cursor: pointer;
   line-height: 1;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .cart-remove:hover { color: #8a3b2b; }
 
