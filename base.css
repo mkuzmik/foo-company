@@ -38,11 +38,25 @@ nav a {
   font-size: 0.9rem;
   color: var(--charcoal);
 }
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--charcoal);
+  cursor: pointer;
+  padding: 0.2rem 0.3rem;
+}
 .cart-link {
   position: relative;
   display: inline-flex;
   align-items: center;
-  margin-left: 1.25rem;
   font-size: 1.05rem;
   text-decoration: none;
 }
@@ -182,6 +196,15 @@ footer {
 }
 
 @media (max-width: 640px) {
-  nav a { margin-left: 0.75rem; }
+  header { position: relative; }
+  .nav-links {
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+    padding-top: 0.75rem;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { margin: 0 0 0.6rem; }
+  .nav-toggle { display: inline-flex; align-items: center; }
   .hero h1 { font-size: 2rem; }
 }
