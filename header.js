@@ -51,6 +51,24 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
+    var backToTop = document.createElement('button');
+    backToTop.type = 'button';
+    backToTop.className = 'back-to-top';
+    backToTop.id = 'back-to-top';
+    backToTop.setAttribute('aria-label', 'Back to top');
+    backToTop.innerHTML = '&#8593;';
+    document.body.appendChild(backToTop);
+
+    window.addEventListener('scroll', function () {
+      backToTop.classList.toggle('visible', window.scrollY > 500);
+    });
+    var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    backToTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
     if (document.getElementById('main-content')) { return; }
     var skip = [
       'SCRIPT', 'STYLE'

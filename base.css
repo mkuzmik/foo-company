@@ -242,8 +242,34 @@ footer {
   .hero h1 { font-size: 2rem; }
 }
 
+.back-to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--charcoal);
+  color: #fff;
+  border: none;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 500;
+}
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.back-to-top:hover { background: var(--charcoal-dark); }
+
 @media print {
-  .skip-link, .demo-banner, .banner, header, footer, .newsletter, .cart-link, .nav-toggle {
+  .skip-link, .demo-banner, .banner, header, footer, .newsletter, .cart-link, .nav-toggle, .back-to-top {
     display: none !important;
   }
   body { background: #fff; color: #000; }
