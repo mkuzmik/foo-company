@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart &mdash; Raven &amp; Ridge Outfitters</title>
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+<script src="header.js" data-base="."></script>
+
+<section>
+  <h2>Your Cart</h2>
+
+  <div id="cart-empty" class="cart-empty" style="display:none;">
+    <p>Your cart is empty.</p>
+    <a class="btn" href="index.html#shop">Browse the Flock Collection</a>
+  </div>
+
+  <div id="cart-items" class="cart-items"></div>
+
+  <div id="cart-summary" class="cart-summary" style="display:none;">
+    <div class="cart-summary-row"><span>Subtotal</span><span id="cart-subtotal">$0</span></div>
+    <div class="cart-summary-note">Shipping and taxes calculated at checkout.</div>
+    <button class="btn" id="checkout-btn" type="button">Checkout</button>
+    <div class="checkout-note">This is a demo store &mdash; no orders are actually placed.</div>
+  </div>
+</section>
+
+<script src="footer.js" data-base="."></script>
+
+<script src="cart.js"></script>
+<script>
+(function () {
+  function render() {
+    var cart = window.RavenCart.getCart();
+    var itemsEl = document.getElementById('cart-items');
+    var emptyEl = document.getElementById('cart-empty');
+    var summaryEl = document.getElementById('cart-summary');
+
+    itemsEl.innerHTML = '';
+
+    if (cart.length === 0) {
+      emptyEl.style.display = 'block';
+      summaryEl.style.display = 'none';
+      return;
+    }
+
+    emptyEl.style.display = 'none';
+    summaryEl.style.display = 'block';
+
+    cart.forEach(function (item) {
+      var row = document.createElement('div');
+      row.className = 'cart-item';
+      row.innerHTML =
+        '<div class="cart-item-icon">' + item.icon + '</div>' +
+        '<div class="cart-item-info"><h3>' + item.name + '</h3><div class="cart-item-price">' + window.RavenCart.formatPrice(item.price) + ' each</div></div>' +
+        '<input class="cart-qty-input" type="number" min="1" value="' + item.qty + '" data-id="' + item.id + '">' +
+        '<div class="cart-item-total">' + window.RavenCart.formatPrice(item.price * item.qty) + '</div>' +
+        '<button class="cart-remove" type="button" data-id="' + item.id + '" aria-label="Remove">&times;</button>';
+      itemsEl.appendChild(row);
+    });
+
+    document.getElementById('cart-subtotal').textContent = window.RavenCart.formatPrice(window.RavenCart.getSubtotal(cart));
+  }
+
+  document.addEventListener('click', function (e) {
+    if (e.target.matches('.cart-remove')) {
+      window.RavenCart.removeFromCart(e.target.getAttribute('data-id'));
+      render();
+    }
+    if (e.target.id === 'checkout-btn') {
+      alert('This is a demo store — no orders are actually placed.');
+    }
+  });
+
+  document.addEventListener('change', function (e) {
+    if (e.target.matches('.cart-qty-input')) {
+      var qty = parseInt(e.target.value, 10) || 1;
+      window.RavenCart.setQty(e.target.getAttribute('data-id'), qty);
+      render();
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', render);
+})();
+</script>
+
+</body>
+</html>

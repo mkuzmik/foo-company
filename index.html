@@ -4,407 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Raven &amp; Ridge Outfitters</title>
-<style>
-  :root {
-    --ink: #1c1e1a;
-    --cream: #f3efe4;
-    --charcoal: #23262b;
-    --charcoal-dark: #14161a;
-    --amber: #c07830;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
-    color: var(--ink);
-    background: var(--cream);
-    line-height: 1.55;
-  }
-  a { color: inherit; }
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.1rem 2rem;
-    border-bottom: 1px solid rgba(0,0,0,0.08);
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 700;
-    font-size: 1.15rem;
-    letter-spacing: 0.02em;
-    text-decoration: none;
-  }
-  nav a {
-    text-decoration: none;
-    margin-left: 1.25rem;
-    font-size: 0.9rem;
-    color: var(--charcoal);
-  }
-  .banner {
-    background: var(--amber);
-    color: #241505;
-    text-align: center;
-    font-size: 0.85rem;
-    padding: 0.5rem 1rem;
-    font-weight: 600;
-  }
-  .hero {
-    background: var(--charcoal-dark);
-    color: #ece7d8;
-    padding: 5rem 2rem 4.5rem;
-    text-align: center;
-  }
-  .hero .wrap { max-width: 720px; margin: 0 auto; }
-  .hero h1 {
-    font-size: 2.6rem;
-    margin: 0 0 1rem;
-    line-height: 1.15;
-  }
-  .hero p {
-    font-size: 1.15rem;
-    color: #bfb9a6;
-    margin: 0 0 2rem;
-  }
-  .btn {
-    display: inline-block;
-    background: var(--amber);
-    color: #fff;
-    padding: 0.85rem 1.75rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    border: none;
-    cursor: pointer;
-  }
-  .btn:hover { background: #a5661f; }
-  .btn.ghost {
-    background: transparent;
-    border: 1px solid #6c6656;
-    color: #ece7d8;
-    margin-left: 0.75rem;
-  }
-  section { padding: 3.5rem 2rem; max-width: 1080px; margin: 0 auto; }
-  h2 {
-    font-size: 1.6rem;
-    text-align: center;
-    margin-bottom: 0.5rem;
-  }
-  .section-sub {
-    text-align: center;
-    color: #5c5f52;
-    max-width: 600px;
-    margin: 0 auto 2.5rem;
-  }
-
-  .press-row {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2.5rem;
-    padding: 1.75rem 2rem;
-    font-size: 0.85rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: #8a8d7c;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-  }
-
-  .products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.75rem;
-  }
-  .product-card {
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid rgba(0,0,0,0.06);
-  }
-  .product-media {
-    height: 120px;
-    background: linear-gradient(135deg, var(--charcoal), var(--charcoal-dark));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5rem;
-  }
-  .product-body { padding: 1.25rem 1.25rem 1.5rem; }
-  .product-body h3 { margin: 0 0 0.25rem; font-size: 1.05rem; }
-  .product-tag { font-size: 0.8rem; color: var(--amber); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
-  .product-body p { color: #4a4d43; font-size: 0.92rem; margin: 0.5rem 0 0.9rem; }
-  .price { font-weight: 700; font-size: 1.05rem; }
-  .stars { color: var(--amber); font-size: 0.85rem; }
-  .swatches { display: flex; gap: 0.4rem; margin-top: 0.6rem; }
-  .swatch { width: 16px; height: 16px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.15); }
-
-  table.sizing {
-    width: 100%;
-    border-collapse: collapse;
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    font-size: 0.9rem;
-  }
-  table.sizing th, table.sizing td {
-    padding: 0.75rem 1rem;
-    text-align: left;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-  }
-  table.sizing th { background: var(--charcoal); color: #ece7d8; font-weight: 600; }
-
-  .offerings {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.75rem;
-  }
-  .offer-card {
-    background: var(--charcoal);
-    color: #ece7d8;
-    border-radius: 8px;
-    padding: 1.75rem;
-  }
-  .offer-card h3 { margin: 0 0 0.6rem; font-size: 1.05rem; }
-  .offer-card p { margin: 0; color: #bfb9a6; font-size: 0.92rem; }
-
-  .journal {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.75rem;
-  }
-  .journal-card { background: #fff; border-radius: 8px; overflow: hidden; border: 1px solid rgba(0,0,0,0.06); }
-  .journal-media { height: 130px; background: #ded6bf; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
-  .journal-body { padding: 1.1rem 1.25rem 1.4rem; }
-  .journal-date { font-size: 0.78rem; color: #8a8d7c; text-transform: uppercase; letter-spacing: 0.03em; }
-  .journal-body h3 { margin: 0.4rem 0 0.5rem; font-size: 1.02rem; }
-  .journal-body p { margin: 0; color: #4a4d43; font-size: 0.9rem; }
-
-  .about { background: #fff; border-radius: 8px; }
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-    align-items: start;
-  }
-  .about-grid p { color: #4a4d43; }
-  .stat-row { display: flex; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap; }
-  .stat b { display: block; font-size: 1.5rem; }
-  .stat span { font-size: 0.85rem; color: #6c6f5f; }
-
-  .timeline { border-left: 2px solid var(--amber); margin: 2rem 0 0 1rem; padding-left: 1.5rem; }
-  .timeline-item { position: relative; margin-bottom: 1.75rem; }
-  .timeline-item::before {
-    content: "";
-    position: absolute;
-    left: -1.95rem;
-    top: 0.3rem;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--amber);
-  }
-  .timeline-year { font-weight: 700; font-size: 0.95rem; }
-  .timeline-item p { margin: 0.25rem 0 0; color: #4a4d43; font-size: 0.92rem; }
-
-  .team {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.75rem;
-  }
-  .team-card { text-align: center; }
-  .team-avatar {
-    width: 84px;
-    height: 84px;
-    border-radius: 50%;
-    margin: 0 auto 0.75rem;
-    background: var(--charcoal);
-    color: #ece7d8;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.6rem;
-    font-weight: 700;
-  }
-  .team-card h3 { margin: 0 0 0.15rem; font-size: 1rem; }
-  .team-card .role { font-size: 0.82rem; color: var(--amber); font-weight: 600; margin-bottom: 0.4rem; }
-  .team-card p.bio { font-size: 0.85rem; color: #5c5f52; margin: 0; }
-
-  .impact {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.5rem;
-    text-align: center;
-  }
-  .impact div b { display: block; font-size: 1.9rem; color: var(--amber); }
-  .impact div span { font-size: 0.85rem; color: #5c5f52; }
-
-  .locations {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-  }
-  .location-card { background: #fff; border-radius: 8px; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.06); }
-  .location-card h3 { margin: 0 0 0.3rem; font-size: 1rem; }
-  .location-card p { margin: 0.2rem 0; font-size: 0.88rem; color: #4a4d43; }
-  .location-tag { display: inline-block; font-size: 0.72rem; background: var(--amber); color: #fff; padding: 0.15rem 0.5rem; border-radius: 4px; margin-top: 0.5rem; }
-
-  .testimonials {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
-  }
-  blockquote {
-    margin: 0;
-    padding: 1.75rem;
-    background: #fff;
-    border-radius: 8px;
-    font-style: italic;
-  }
-  blockquote cite {
-    display: block;
-    margin-top: 1rem;
-    font-style: normal;
-    font-size: 0.9rem;
-    color: #6c6f5f;
-  }
-
-  .review-group { margin-bottom: 1rem; }
-  .review-group summary {
-    cursor: pointer;
-    list-style: none;
-    background: #fff;
-    border: 1px solid rgba(0,0,0,0.06);
-    border-radius: 8px;
-    padding: 1rem 1.25rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 600;
-  }
-  .review-group summary::-webkit-details-marker { display: none; }
-  .review-group summary .stars { font-weight: 400; }
-  .review-group[open] summary { border-radius: 8px 8px 0 0; }
-  .review-list {
-    background: #faf7ee;
-    border: 1px solid rgba(0,0,0,0.06);
-    border-top: none;
-    border-radius: 0 0 8px 8px;
-    padding: 1.25rem;
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  }
-  .review-card {
-    background: #fff;
-    border-radius: 6px;
-    padding: 1rem 1.1rem;
-    border: 1px solid rgba(0,0,0,0.06);
-  }
-  .review-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.35rem; }
-  .review-name { font-weight: 600; font-size: 0.92rem; }
-  .review-meta { font-size: 0.75rem; color: #8a8d7c; margin-bottom: 0.5rem; }
-  .verified { color: #4a5a34; font-weight: 600; }
-  .review-card p { margin: 0; font-size: 0.88rem; color: #3f4239; }
-  .review-more { text-align: center; font-size: 0.85rem; color: #8a8d7c; padding-top: 0.5rem; }
-
-  .faq { max-width: 760px; }
-  .faq details {
-    background: #fff;
-    border-radius: 6px;
-    padding: 1rem 1.25rem;
-    margin-bottom: 0.75rem;
-  }
-  .faq summary { font-weight: 600; cursor: pointer; }
-  .faq p { color: #4a4d43; margin: 0.75rem 0 0; }
-
-  .newsletter {
-    background: var(--charcoal);
-    color: #ece7d8;
-    border-radius: 8px;
-    text-align: center;
-    padding: 3rem 2rem;
-  }
-  .newsletter h2 { color: #fff; }
-  .newsletter-form { display: flex; justify-content: center; gap: 0.6rem; margin-top: 1.5rem; flex-wrap: wrap; }
-  .newsletter-form input {
-    padding: 0.8rem 1rem;
-    border-radius: 4px;
-    border: 1px solid #4a4d43;
-    background: #1c1e1a;
-    color: #ece7d8;
-    min-width: 260px;
-  }
-  .newsletter small { display: block; margin-top: 1rem; color: #8a8d7c; }
-
-  .two-col {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-  .info-card { background: #fff; border-radius: 8px; padding: 1.75rem; border: 1px solid rgba(0,0,0,0.06); }
-  .info-card h3 { margin: 0 0 0.6rem; }
-  .info-card p { color: #4a4d43; font-size: 0.92rem; }
-
-  footer {
-    background: var(--charcoal-dark);
-    color: #cfd0c0;
-    padding: 3rem 2rem 2rem;
-    margin-top: 2rem;
-  }
-  .footer-grid {
-    max-width: 1080px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 2rem;
-  }
-  .footer-grid h4 { margin: 0 0 0.75rem; font-size: 0.95rem; color: #fff; }
-  .footer-grid a, .footer-grid p { display: block; color: #a9ab98; text-decoration: none; font-size: 0.9rem; margin-bottom: 0.4rem; }
-  .footer-bottom {
-    text-align: center;
-    margin-top: 2.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 0.85rem;
-    color: #7a7c6c;
-  }
-
-  @media (max-width: 640px) {
-    .about-grid { grid-template-columns: 1fr; }
-    nav a { margin-left: 0.75rem; }
-    .hero h1 { font-size: 2rem; }
-  }
-</style>
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="shop.css">
 </head>
 <body>
 
-<div class="banner">Free shipping on orders over $120 &middot; Raven's Nest members ship free, always</div>
-
-<header>
-  <a class="logo" href="#">🐦‍⬛ Raven &amp; Ridge</a>
-  <nav>
-    <a href="#shop">Shop</a>
-    <a href="#offerings">Offerings</a>
-    <a href="#journal">Journal</a>
-    <a href="#about">About</a>
-    <a href="#locations">Locations</a>
-    <a href="#product-reviews">Reviews</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+<script src="header.js" data-base="."></script>
 
 <div class="hero">
   <div class="wrap">
     <h1>Gear that finds its way home, every time.</h1>
     <p>Ravens are the only birds that scout ahead and always circle back to tell the flock what they found. We build gear with the same instinct &mdash; built to go out far, and built to bring you back.</p>
     <a class="btn" href="#shop">Shop the flock</a>
-    <a class="btn ghost" href="#offerings">See our offerings</a>
+    <a class="btn ghost" href="offerings.html">See our offerings</a>
   </div>
 </div>
 
@@ -420,7 +32,7 @@
   <h2>The Flock Collection</h2>
   <p class="section-sub">Every product is named after a raven of myth or memory &mdash; each one built for a different kind of distance.</p>
   <div class="products">
-    <div class="product-card">
+    <a class="product-card" href="products/huginn-42.html">
       <div class="product-media">🎒</div>
       <div class="product-body">
         <div class="product-tag">Pack</div>
@@ -433,9 +45,11 @@
           <span class="swatch" style="background:#4a5a34;"></span>
         </div>
         <div class="price">$259</div>
+        <span class="view-link">View details &amp; reviews &rarr;</span>
+        <button class="btn quick-add" type="button" data-add-to-cart data-id="huginn-42" data-name="Huginn 42 Trail Pack" data-price="259" data-icon="🎒">Quick add</button>
       </div>
-    </div>
-    <div class="product-card">
+    </a>
+    <a class="product-card" href="products/muninn-tent.html">
       <div class="product-media">⛺</div>
       <div class="product-body">
         <div class="product-tag">Shelter</div>
@@ -447,9 +61,11 @@
           <span class="swatch" style="background:#c07830;"></span>
         </div>
         <div class="price">$389</div>
+        <span class="view-link">View details &amp; reviews &rarr;</span>
+        <button class="btn quick-add" type="button" data-add-to-cart data-id="muninn-tent" data-name="Muninn Ultralight Tent" data-price="389" data-icon="⛺">Quick add</button>
       </div>
-    </div>
-    <div class="product-card">
+    </a>
+    <a class="product-card" href="products/corax-shell.html">
       <div class="product-media">🧥</div>
       <div class="product-body">
         <div class="product-tag">Shell</div>
@@ -461,9 +77,11 @@
           <span class="swatch" style="background:#8a3b2b;"></span>
         </div>
         <div class="price">$179</div>
+        <span class="view-link">View details &amp; reviews &rarr;</span>
+        <button class="btn quick-add" type="button" data-add-to-cart data-id="corax-shell" data-name="Corax Rain Shell" data-price="179" data-icon="🧥">Quick add</button>
       </div>
-    </div>
-    <div class="product-card">
+    </a>
+    <a class="product-card" href="products/fable-base-layer.html">
       <div class="product-media">🧦</div>
       <div class="product-body">
         <div class="product-tag">Layer</div>
@@ -475,9 +93,11 @@
           <span class="swatch" style="background:#d8d0bc;"></span>
         </div>
         <div class="price">$89</div>
+        <span class="view-link">View details &amp; reviews &rarr;</span>
+        <button class="btn quick-add" type="button" data-add-to-cart data-id="fable-base-layer" data-name="Fable Wool Base Layer" data-price="89" data-icon="🧦">Quick add</button>
       </div>
-    </div>
-    <div class="product-card">
+    </a>
+    <a class="product-card" href="products/onyx-boots.html">
       <div class="product-media">🥾</div>
       <div class="product-body">
         <div class="product-tag">Footwear</div>
@@ -488,9 +108,11 @@
           <span class="swatch" style="background:#14161a;"></span>
         </div>
         <div class="price">$219</div>
+        <span class="view-link">View details &amp; reviews &rarr;</span>
+        <button class="btn quick-add" type="button" data-add-to-cart data-id="onyx-boots" data-name="Onyx Ridge Boots" data-price="219" data-icon="🥾">Quick add</button>
       </div>
-    </div>
-    <div class="product-card">
+    </a>
+    <a class="product-card" href="products/roost-hammock.html">
       <div class="product-media">🛏️</div>
       <div class="product-body">
         <div class="product-tag">Camp</div>
@@ -502,8 +124,59 @@
           <span class="swatch" style="background:#23262b;"></span>
         </div>
         <div class="price">$149</div>
+        <span class="view-link">View details &amp; reviews &rarr;</span>
+        <button class="btn quick-add" type="button" data-add-to-cart data-id="roost-hammock" data-name="Roost Camp Hammock" data-price="149" data-icon="🛏️">Quick add</button>
       </div>
-    </div>
+    </a>
+    <a class="product-card" href="products/corvus-jacket.html">
+      <div class="product-media">🦺</div>
+      <div class="product-body">
+        <div class="product-tag">Insulation</div>
+        <h3>Corvus Down Jacket</h3>
+        <div class="stars">★★★★★ <span style="color:#8a8d7c;">(356)</span></div>
+        <p>Named for the genus that ravens and crows both call home. 700-fill down that packs into its own chest pocket.</p>
+        <div class="swatches">
+          <span class="swatch" style="background:#23262b;"></span>
+          <span class="swatch" style="background:#8a3b2b;"></span>
+          <span class="swatch" style="background:#4a5a34;"></span>
+        </div>
+        <div class="price">$229</div>
+        <span class="view-link">View details &amp; reviews &rarr;</span>
+        <button class="btn quick-add" type="button" data-add-to-cart data-id="corvus-jacket" data-name="Corvus Down Jacket" data-price="229" data-icon="🦺">Quick add</button>
+      </div>
+    </a>
+    <a class="product-card" href="products/rook-headlamp.html">
+      <div class="product-media">🔦</div>
+      <div class="product-body">
+        <div class="product-tag">Lighting</div>
+        <h3>Rook Headlamp</h3>
+        <div class="stars">★★★★★ <span style="color:#8a8d7c;">(203)</span></div>
+        <p>Named for the rook, a corvid that keeps watch after dark. 400 lumens, USB-C rechargeable, red night-vision mode.</p>
+        <div class="swatches">
+          <span class="swatch" style="background:#23262b;"></span>
+          <span class="swatch" style="background:#4a5a34;"></span>
+        </div>
+        <div class="price">$59</div>
+        <span class="view-link">View details &amp; reviews &rarr;</span>
+        <button class="btn quick-add" type="button" data-add-to-cart data-id="rook-headlamp" data-name="Rook Headlamp" data-price="59" data-icon="🔦">Quick add</button>
+      </div>
+    </a>
+    <a class="product-card" href="products/talon-poles.html">
+      <div class="product-media">🥢</div>
+      <div class="product-body">
+        <div class="product-tag">Accessory</div>
+        <h3>Talon Trekking Poles</h3>
+        <div class="stars">★★★★★ <span style="color:#8a8d7c;">(271)</span></div>
+        <p>Named for a raptor's grip. Cold-forged aluminum poles with a flip-lock that doesn't slip under load. Sold as a pair.</p>
+        <div class="swatches">
+          <span class="swatch" style="background:#23262b;"></span>
+          <span class="swatch" style="background:#4a5a34;"></span>
+        </div>
+        <div class="price">$119</div>
+        <span class="view-link">View details &amp; reviews &rarr;</span>
+        <button class="btn quick-add" type="button" data-add-to-cart data-id="talon-poles" data-name="Talon Trekking Poles" data-price="119" data-icon="🥢">Quick add</button>
+      </div>
+    </a>
   </div>
 
   <div style="margin-top: 3rem;">
@@ -517,424 +190,6 @@
   </div>
 </section>
 
-<section id="product-reviews">
-  <h2>Reviews, by product</h2>
-  <p class="section-sub">A sample of what the flock says about each piece &mdash; unedited, good and middling alike.</p>
-
-  <details class="review-group">
-    <summary><span>Huginn 42 Trail Pack</span><span class="stars">★★★★★ 4.8 &middot; 312 reviews</span></summary>
-    <div class="review-list">
-      <div class="review-card">
-        <div class="review-top"><span class="review-name">Wren Castellano</span><span class="stars">★★★★★</span></div>
-        <div class="review-meta">Feb 2026 &middot; <span class="verified">Verified purchase</span></div>
-        <p>Carried this on an 80-mile section hike and the hip belt never once dug in. The zippers are the best I've used on any pack.</p>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="review-name">Diego Salazar</span><span class="stars">★★★★★</span></div>
-        <div class="review-meta">Jan 2026 &middot; <span class="verified">Verified purchase</span></div>
-        <p>Fits smaller torsos better than most 40L packs I've tried. My partner and I both wear a medium comfortably.</p>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="review-name">Astrid Kowalski</span><span class="stars">★★★★☆</span></div>
-        <div class="review-meta">Dec 2025 &middot; <span class="verified">Verified purchase</span></div>
-        <p>Great pack overall. Wish the side pockets were angled for easier one-handed bottle grabs on the move.</p>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="review-name">Colm O'Rourke</span><span class="stars">★★★★★</span></div>
-        <div class="review-meta">Nov 2025 &middot; <span class="verified">Verified purchase</span></div>
-        <p>Three years in and the fabric still looks new. Sent it in once for a buckle swap, back in five days.</p>
-      </div>
-    </div>
-    <div class="review-more">Showing 4 of 312 reviews</div>
-  </details>
-
-  <details class="review-group">
-    <summary><span>Muninn Ultralight Tent</span><span class="stars">★★★★★ 4.7 &middot; 198 reviews</span></summary>
-    <div class="review-list">
-      <div class="review-card">
-        <div class="review-top"><span class="review-name">Yuki Tanaka</span><span class="stars">★★★★★</span></div>
-        <div class="review-meta">Mar 2026 &middot; <span class="verified">Verified purchase</span></div>
-        <p>Pitched it in under two minutes in a crosswind, which felt like cheating. Stayed bone dry through a full night of rain.</p>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="review-name">Bjorn Aasgard</span><span class="stars">★★★★★</span></div>
-        <div class="review-meta">Feb 2026 &middot; <span class="verified">Verified purchase</span></div>
-        <p>2.1kg for a real two-person tent still amazes me. Vestibule fits both packs with room to spare.</p>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="review-name">Talia Reyes</span><span class="stars">★★★☆☆</span></div>
-        <div class="review-meta">Jan 2026 &middot; <span class="verified">Verified purchase</span></div>
-        <p>Solid tent but condensation builds up fast if you don't crack both vents. Took a couple trips to learn that.</p>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="review-name">Otis Greenwood</span><span class="stars">★★★★★</span></div>
-        <div class="review-meta">Dec 2025 &middot; <span class="verified">Verified purchase</span></div>
-        <p>Replaced a tent twice its weight and never looked back. Poles have held up through some genuinely bad wind.</p>
-      </div>
-    </div>
-    <div class="review-more">Showing 4 of 198 reviews</div>
-  </details>
-
-  <details class="review-group">
-    <summary><span>Corax Rain Shell</span><span class="stars">★★★★☆ 4.4 &middot; 441 reviews</span></summary>
-    <div class="review-list">
-      <div class="review-card">
-        <div class="review-top"><span class="review-name">Mireille Dubois</span><span class="stars">★★★★★</span></div>
-        <div class="review-meta">Mar 2026 &middot; <span class="verified">Verified purchase</span></div>
-        <p>Wore this through a genuinely miserable coastal storm and stayed completely dry. Pit zips actually work.</p>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="review-name">Hana Petrov</span><span class="stars">★★★★☆</span></div>
-        <div class="review-meta">Feb 2026 &middot; <span class="verified">Verified purchase</span></div>
-        <p>Great shell, runs a size small. Ordered a large over my usual medium and it layers perfectly now.</p>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="review-name">Callum Ashworth</span><span class="stars">★★★☆☆</span></div>
-        <div class="review-meta">Jan 2026 &middot; <span class="verified">Verified purchase</span></div>
-        <p>Waterproofing is excellent but breathability lags behind the price point on hot, humid climbs.</p>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="review-name">Zara Whitcombe</span><span class="stars">★★★★★</span></div>
-        <div class="review-meta">Dec 2025 &middot; <span class="verified">Verified purchase</span></div>
-        <p>Had a seam start to peel after a year of heavy use, sent it through the Rebuild Program and got it back reinforced.</p>
-      </div>
-    </div>
-    <div class="review-more">Showing 4 of 441 reviews</div>
-  </details>
-
-  <details class="review-group">
-    <summary><span>Fable Wool Base Layer</span><span class="stars">★★★★★ 4.9 &middot; 267 reviews</span></summary>
-    <div class="review-list">
-      <div class="review-card">
-        <div class="review-top"><span class="review-name">Emeka Obi</span><span class="stars">★★★★★</span></div>
-        <div class="review-meta">Mar 2026 &middot; <span class="verified">Verified purchase</span></div>
-        <p>Wore the same top five days straight on a trip and it never held onto odor. Softest merino blend I own.</p>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="review-name">Noor Al-Farsi</span><span class="stars">★★★★★</span></div>
-        <div class="review-meta">Feb 2026 &middot; <span class="verified">Verified purchase</span></div>
-        <p>Perfect midweight for shoulder-season hikes. Doesn't overheat under a shell like heavier wool does.</p>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="review-name">Sigrid Halvorsen</span><span class="stars">★★★★★</span></div>
-        <div class="review-meta">Jan 2026 &middot; <span class="verified">Verified purchase</span></div>
-        <p>Bought three more after the first wash held its shape. My new base layer for everything, not just trips.</p>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="review-name">Ravi Chandrasekaran</span><span class="stars">★★★★☆</span></div>
-        <div class="review-meta">Dec 2025 &middot; <span class="verified">Verified purchase</span></div>
-        <p>Fantastic layer, just wish it came in more colors. Everything sells out fast in the darker tones.</p>
-      </div>
-    </div>
-    <div class="review-more">Showing 4 of 267 reviews</div>
-  </details>
-
-  <details class="review-group">
-    <summary><span>Onyx Ridge Boots</span><span class="stars">★★★★★ 4.8 &middot; 529 reviews</span></summary>
-    <div class="review-list">
-      <div class="review-card">
-        <div class="review-top"><span class="review-name">Naledi Mthembu</span><span class="stars">★★★★★</span></div>
-        <div class="review-meta">Mar 2026 &middot; <span class="verified">Verified purchase</span></div>
-        <p>Zero break-in period, which never happens with waterproof boots. Wore them straight out of the box on a 12-mile day.</p>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="review-name">Marcus Deering</span><span class="stars">★★★★★</span></div>
-        <div class="review-meta">Feb 2026 &middot; <span class="verified">Verified purchase</span></div>
-        <p>Had these resoled once through the Rebuild Program after two years of guiding. Fit came back identical.</p>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="review-name">Freya Lindqvist</span><span class="stars">★★★★★</span></div>
-        <div class="review-meta">Jan 2026 &middot; <span class="verified">Verified purchase</span></div>
-        <p>Bought mine secondhand through Second Flight and they still had years of life left. Great ankle support on scree.</p>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="review-name">Sam Okonkwo</span><span class="stars">★★★★☆</span></div>
-        <div class="review-meta">Dec 2025 &middot; <span class="verified">Verified purchase</span></div>
-        <p>Excellent boot, runs slightly narrow through the toe box. Sizing up half a size fixed it for me.</p>
-      </div>
-    </div>
-    <div class="review-more">Showing 4 of 529 reviews</div>
-  </details>
-
-  <details class="review-group">
-    <summary><span>Roost Camp Hammock</span><span class="stars">★★★★☆ 4.3 &middot; 84 reviews</span></summary>
-    <div class="review-list">
-      <div class="review-card">
-        <div class="review-top"><span class="review-name">Dana Whitfield</span><span class="stars">★★★★★</span></div>
-        <div class="review-meta">Feb 2026 &middot; <span class="verified">Verified purchase</span></div>
-        <p>Packs down smaller than my water bottle and holds my full weight with room to spare. Great add-on to any base camp.</p>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="review-name">Ollie Bergstrom</span><span class="stars">★★★★☆</span></div>
-        <div class="review-meta">Jan 2026 &middot; <span class="verified">Verified purchase</span></div>
-        <p>Comfortable and light. Straps could be a touch longer for wider trees, had to get creative twice.</p>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="review-name">Priya Nakamura</span><span class="stars">★★★★☆</span></div>
-        <div class="review-meta">Dec 2025 &middot; <span class="verified">Verified purchase</span></div>
-        <p>Good for lounging at camp, wouldn't call it a full tent replacement without the bug net add-on.</p>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="review-name">Iris Fontaine</span><span class="stars">★★★★★</span></div>
-        <div class="review-meta">Nov 2025 &middot; <span class="verified">Verified purchase</span></div>
-        <p>Bought this on a whim and now it's the first thing I pack. Dries fast after a wet setup too.</p>
-      </div>
-    </div>
-    <div class="review-more">Showing 4 of 84 reviews</div>
-  </details>
-</section>
-
-<section id="offerings">
-  <h2>Beyond the Gear</h2>
-  <p class="section-sub">Raven &amp; Ridge is a membership as much as it's a gear shop &mdash; here's what comes with the flock.</p>
-  <div class="offerings">
-    <div class="offer-card">
-      <h3>Guided Ridge Expeditions</h3>
-      <p>Small-group, multi-day guided trips led by our own field team, three seasons a year, capped at eight hikers per trip. Starting at $640.</p>
-    </div>
-    <div class="offer-card">
-      <h3>The Gear Rebuild Program</h3>
-      <p>Send back anything you bought from us, any year, and we'll repair or rebuild it at cost. Torn seam, blown zipper, worn sole &mdash; we fix it.</p>
-    </div>
-    <div class="offer-card">
-      <h3>Second Flight Resale</h3>
-      <p>Trade in gently used Raven &amp; Ridge gear for store credit. We refurbish it and resell it at half price to keep it on trails, not in landfills.</p>
-    </div>
-    <div class="offer-card">
-      <h3>Raven's Nest Membership</h3>
-      <p>$60/year gets you free repairs, early access to limited colorways, and a seat at our annual Flock Gathering meetup.</p>
-    </div>
-    <div class="offer-card">
-      <h3>Wholesale &amp; Retail Partners</h3>
-      <p>We supply a small number of independent outdoor shops each season. Inquiries reviewed twice a year, in spring and fall.</p>
-    </div>
-    <div class="offer-card">
-      <h3>Ambassador Program</h3>
-      <p>A yearly cohort of 12 guides, thru-hikers, and photographers who field-test unreleased gear and get a revenue share on gear they help design.</p>
-    </div>
-  </div>
-</section>
-
-<section id="journal">
-  <h2>From the Journal</h2>
-  <p class="section-sub">Field notes, gear care, and trip reports from the team and the flock.</p>
-  <div class="journal">
-    <div class="journal-card">
-      <div class="journal-media">🗻</div>
-      <div class="journal-body">
-        <div class="journal-date">March 2026</div>
-        <h3>Five Ridge Traverses Worth the Detour</h3>
-        <p>Our field team ranks the routes they keep coming back to, from a two-hour scramble to a four-day traverse.</p>
-      </div>
-    </div>
-    <div class="journal-card">
-      <div class="journal-media">🧵</div>
-      <div class="journal-body">
-        <div class="journal-date">January 2026</div>
-        <h3>How to Re-Seal a Rain Shell at Home</h3>
-        <p>A step-by-step from our repair bench on reviving tape seams without sending your jacket back to us.</p>
-      </div>
-    </div>
-    <div class="journal-card">
-      <div class="journal-media">🐦‍⬛</div>
-      <div class="journal-body">
-        <div class="journal-date">November 2025</div>
-        <h3>What Ravens Actually Remember</h3>
-        <p>A look at the research behind raven cognition, and why it still shapes how we name and design gear.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="about" class="about">
-  <div class="about-grid">
-    <div>
-      <h2 style="text-align:left;">Why ravens?</h2>
-      <p>In 2014, founders Maren Ostby and Teo Alcazar got stranded above the tree line in a three-day storm. The only company they had for two of those days was a pair of ravens that kept circling their camp, then flying off toward the valley and back &mdash; scouting a way down that the map didn't show.</p>
-      <p>They followed the birds off the mountain. A year later, Raven &amp; Ridge shipped its first pack.</p>
-      <p>Ravens are one of the few wild animals known to plan ahead, remember faces for years, and solve multi-step problems to get what they want. We think that's exactly the kind of company we want to keep on a trail &mdash; so it's the company we named ourselves after.</p>
-    </div>
-    <div>
-      <p>Twelve years later we're still a small team, still based near the same ridge, and every prototype is still field-tested by people who actually carry it.</p>
-      <div class="stat-row">
-        <div class="stat"><b>2014</b><span>Founded</span></div>
-        <div class="stat"><b>30+</b><span>Countries shipped</span></div>
-        <div class="stat"><b>100%</b><span>Repairs, no questions asked</span></div>
-        <div class="stat"><b>41</b><span>People on the team</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-year">2014</div>
-      <p>Maren Ostby and Teo Alcazar sew the first Huginn prototype in a shared garage outside Corvid Hollow, Colorado.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-year">2015</div>
-      <p>Raven &amp; Ridge ships its first 500 packs, all pre-ordered before a single unit existed.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-year">2017</div>
-      <p>The Corvid Hollow workshop opens, doubling as our first retail counter and repair bench.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-year">2019</div>
-      <p>The Gear Rebuild Program launches after we notice customers were still wearing packs from 2015.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-year">2021</div>
-      <p>Raven &amp; Ridge becomes Flockmark Certified for supply chain and materials sourcing.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-year">2023</div>
-      <p>We open our first flagship store, built partly from reclaimed timber from the original workshop roof.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-year">2025</div>
-      <p>Second Flight resale launches, giving retired gear a second life at half the original price.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-year">2026</div>
-      <p>Raven's Nest membership passes 10,000 members across 30 countries.</p>
-    </div>
-  </div>
-
-  <h2 style="margin-top: 3rem;">The people behind the flock</h2>
-  <div class="team">
-    <div class="team-card">
-      <div class="team-avatar">MO</div>
-      <h3>Maren Ostby</h3>
-      <div class="role">Co-Founder &amp; Creative Director</div>
-      <p class="bio">Designs every product's first sketch, still by hand.</p>
-    </div>
-    <div class="team-card">
-      <div class="team-avatar">TA</div>
-      <h3>Teo Alcazar</h3>
-      <div class="role">Co-Founder &amp; Head of Product</div>
-      <p class="bio">Field-tests every prototype personally before it ships.</p>
-    </div>
-    <div class="team-card">
-      <div class="team-avatar">JE</div>
-      <h3>Jonas Eff</h3>
-      <div class="role">Head of Design</div>
-      <p class="bio">Obsessive about zipper pulls and pocket placement.</p>
-    </div>
-    <div class="team-card">
-      <div class="team-avatar">IS</div>
-      <h3>Ingrid Solberg</h3>
-      <div class="role">Materials Lead</div>
-      <p class="bio">Sources every fabric, tests every seam tape.</p>
-    </div>
-    <div class="team-card">
-      <div class="team-avatar">KA</div>
-      <h3>Kwame Asante</h3>
-      <div class="role">Field Test Director</div>
-      <p class="bio">Runs the ambassador program and our expedition trips.</p>
-    </div>
-    <div class="team-card">
-      <div class="team-avatar">LV</div>
-      <h3>Lena Vukovic</h3>
-      <div class="role">Sustainability Lead</div>
-      <p class="bio">Tracks every gram of recycled material we use.</p>
-    </div>
-  </div>
-
-  <h2 style="margin-top: 3rem;">Our impact so far</h2>
-  <div class="impact">
-    <div><b>68%</b><span>recycled materials, by weight</span></div>
-    <div><b>14,200</b><span>repairs completed since 2019</span></div>
-    <div><b>3,900</b><span>items given a second life</span></div>
-    <div><b>2,100t</b><span>carbon offset since 2021</span></div>
-  </div>
-</section>
-
-<section id="locations">
-  <h2>Find Us</h2>
-  <p class="section-sub">One flagship, a handful of trusted stockists.</p>
-  <div class="locations">
-    <div class="location-card">
-      <span class="location-tag">Flagship</span>
-      <h3>Corvid Hollow, Colorado</h3>
-      <p>412 Timberline Way, Corvid Hollow, CO 80000</p>
-      <p>Open daily, 9am&ndash;6pm</p>
-    </div>
-    <div class="location-card">
-      <span class="location-tag">Stockist</span>
-      <h3>Millrun Trail Co.</h3>
-      <p>Millrun Hollow, Vermont</p>
-    </div>
-    <div class="location-card">
-      <span class="location-tag">Stockist</span>
-      <h3>Cascade Basecamp</h3>
-      <p>Cinder Falls, Oregon</p>
-    </div>
-    <div class="location-card">
-      <span class="location-tag">Stockist</span>
-      <h3>Wren Hollow Outfitters</h3>
-      <p>Glenmore, Ontario</p>
-    </div>
-  </div>
-</section>
-
-<section id="reviews">
-  <h2>From the trail</h2>
-  <div class="testimonials">
-    <blockquote>
-      "Took the Huginn 42 through a whiteout on the divide and never once worried about the seams."
-      <cite>&mdash; Priya Nakamura, Ridgeline Trail Club</cite>
-    </blockquote>
-    <blockquote>
-      "Sent a torn strap back after four years of hard use through the Rebuild Program. Got it back in a week, no charge."
-      <cite>&mdash; Ollie Bergstrom, thru-hiker</cite>
-    </blockquote>
-    <blockquote>
-      "The Corax shell is the only rain jacket I trust above 10,000 feet."
-      <cite>&mdash; Dana Whitfield, alpine guide</cite>
-    </blockquote>
-    <blockquote>
-      "Did a Ridge Expedition last fall and ended up joining Raven's Nest the same week. Worth every dollar."
-      <cite>&mdash; Sam Okonkwo, member since 2023</cite>
-    </blockquote>
-    <blockquote>
-      "Bought my Onyx boots secondhand through Second Flight. Three years later they're still my only pair."
-      <cite>&mdash; Freya Lindqvist, weekend hiker</cite>
-    </blockquote>
-    <blockquote>
-      "I applied to the ambassador program on a whim. Best trail season of my life."
-      <cite>&mdash; Marcus Deering, 2025 ambassador cohort</cite>
-    </blockquote>
-  </div>
-</section>
-
-<section id="faq" class="faq">
-  <h2>Common questions</h2>
-  <details>
-    <summary>Where is Raven &amp; Ridge based?</summary>
-    <p>Our workshop and warehouse sit outside Corvid Hollow, Colorado, at the base of the same ridge where the company started.</p>
-  </details>
-  <details>
-    <summary>Do you ship internationally?</summary>
-    <p>Yes &mdash; we currently ship to over 30 countries. Customs and duties are calculated at checkout.</p>
-  </details>
-  <details>
-    <summary>What's covered under the Rebuild Program?</summary>
-    <p>Anything we've made, at any age: broken zippers, torn seams, worn-out soles, and delaminated fabric. You only pay return shipping.</p>
-  </details>
-  <details>
-    <summary>How do I join Raven's Nest?</summary>
-    <p>Sign up from your account page for $60/year. Membership renews annually and can be cancelled anytime.</p>
-  </details>
-  <details>
-    <summary>How does Second Flight resale work?</summary>
-    <p>Mail in gently used gear, we inspect and refurbish it, and you get store credit based on condition. Refurbished items are then resold at roughly half original price.</p>
-  </details>
-  <details>
-    <summary>How do I apply to the ambassador program?</summary>
-    <p>Applications open every October for the following year's cohort of 12. Look for the announcement in the Journal and on our socials.</p>
-  </details>
-</section>
-
 <section class="newsletter">
   <h2>Join the flock</h2>
   <p>Trip reports, repair tips, and first access to limited colorways. One email a month, never more.</p>
@@ -945,47 +200,8 @@
   <small>No spam. Unsubscribe anytime. We've never sold an email address and we're not about to start.</small>
 </section>
 
-<section>
-  <div class="two-col">
-    <div class="info-card">
-      <h3>Wholesale inquiries</h3>
-      <p>We take on a small number of new retail partners each season. Reach out with your shop's story and we'll follow up within two weeks.</p>
-    </div>
-    <div class="info-card">
-      <h3>Careers</h3>
-      <p>We're a small team based near Corvid Hollow, Colorado, usually hiring for design, materials, and field test roles. Open roles are posted seasonally.</p>
-    </div>
-  </div>
-</section>
-
-<footer id="contact">
-  <div class="footer-grid">
-    <div>
-      <h4>Raven &amp; Ridge Outfitters</h4>
-      <p>412 Timberline Way<br>Corvid Hollow, CO 80000</p>
-    </div>
-    <div>
-      <h4>Contact</h4>
-      <a href="mailto:hello@ravenandridge.example">hello@ravenandridge.example</a>
-      <a href="mailto:wholesale@ravenandridge.example">wholesale@ravenandridge.example</a>
-      <a href="#">+1 (555) 019-2847</a>
-    </div>
-    <div>
-      <h4>Shop</h4>
-      <a href="#shop">Packs &amp; Shelters</a>
-      <a href="#offerings">Membership</a>
-      <a href="#locations">Stockists</a>
-    </div>
-    <div>
-      <h4>Follow</h4>
-      <a href="#">Instagram</a>
-      <a href="#journal">Trail Journal</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    &copy; 2026 Raven &amp; Ridge Outfitters. All rights reserved.
-  </div>
-</footer>
+<script src="footer.js" data-base="."></script>
+<script src="cart.js"></script>
 
 </body>
 </html>
