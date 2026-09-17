@@ -11,6 +11,59 @@
 }
 .offer-card h3 { margin: 0 0 0.6rem; font-size: 1.05rem; }
 .offer-card p { margin: 0; color: #bfb9a6; font-size: 0.92rem; }
+.offer-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.offer-detail {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 8px;
+  padding: 2rem 2.25rem;
+}
+.offer-detail-header { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 1.25rem; }
+.offer-detail-header .offer-icon { background: var(--charcoal); color: #fff; margin-bottom: 0; flex-shrink: 0; }
+.offer-detail-header h2 { text-align: left; margin: 0; font-size: 1.3rem; }
+.offer-detail p { color: #3f4239; margin: 0 0 1rem; }
+.offer-detail ul { margin: 0 0 1rem; padding-left: 1.2rem; color: #3f4239; }
+.offer-detail li { margin-bottom: 0.4rem; }
+.offer-detail .tag-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
+.offer-tag-pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  background: #faf7ee;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 20px;
+  padding: 0.25rem 0.75rem;
+}
+
+table.offer-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  margin: 0 0 1rem;
+}
+table.offer-table th, table.offer-table td {
+  padding: 0.65rem 0.9rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+table.offer-table th { background: var(--charcoal); color: #ece7d8; font-weight: 600; }
+
+@media (max-width: 640px) {
+  .offer-detail { padding: 1.5rem; }
+}
 
 .journal {
   display: grid;
