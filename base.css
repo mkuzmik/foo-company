@@ -4,6 +4,7 @@
   --charcoal: #23262b;
   --charcoal-dark: #14161a;
   --amber: #c07830;
+  --amber-text: #8f5a1c;
 }
 * { box-sizing: border-box; }
 body {
@@ -56,7 +57,7 @@ nav a {
 }
 nav a.nav-current {
   font-weight: 700;
-  color: var(--amber);
+  color: var(--amber-text);
   border-bottom: 2px solid var(--amber);
 }
 .header-actions {
@@ -86,7 +87,7 @@ nav a.nav-current {
   top: -8px;
   right: -11px;
   background: var(--amber);
-  color: #fff;
+  color: #241505;
   font-size: 0.65rem;
   font-weight: 700;
   min-width: 16px;
@@ -132,7 +133,7 @@ nav a.nav-current {
 .btn {
   display: inline-block;
   background: var(--amber);
-  color: #fff;
+  color: #241505;
   padding: 0.85rem 1.75rem;
   border-radius: 4px;
   text-decoration: none;
@@ -141,14 +142,14 @@ nav a.nav-current {
   border: none;
   cursor: pointer;
 }
-.btn:hover { background: #a5661f; }
+.btn:hover { background: #d1893f; }
 .btn.ghost {
   background: transparent;
   border: 1px solid #6c6656;
   color: #ece7d8;
   margin-left: 0.75rem;
 }
-.btn.added { background: #4a5a34; }
+.btn.added { background: #4a5a34; color: #fff; }
 section { padding: 3.5rem 2rem; max-width: 1080px; margin: 0 auto; }
 h1, h2 {
   font-size: 1.6rem;
@@ -179,7 +180,7 @@ h1, h2 {
   color: #ece7d8;
   min-width: 260px;
 }
-.newsletter small { display: block; margin-top: 1rem; color: #8a8d7c; }
+.newsletter small { display: block; margin-top: 1rem; color: #a9ab98; }
 
 .contact-note {
   background: #faf6ec;

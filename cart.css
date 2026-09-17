@@ -36,7 +36,7 @@
   background: none;
   border: none;
   font-size: 1.3rem;
-  color: #8a8d7c;
+  color: #66695a;
   cursor: pointer;
   line-height: 1;
 }
@@ -54,7 +54,7 @@
   padding: 1.5rem;
 }
 .cart-summary-row { display: flex; justify-content: space-between; margin-bottom: 0.75rem; font-size: 0.95rem; }
-.cart-summary-note { color: #8a8d7c; font-size: 0.82rem; }
+.cart-summary-note { color: #66695a; font-size: 0.82rem; }
 .cart-summary .btn { width: 100%; margin-top: 0.5rem; }
 .checkout-note { margin-top: 1rem; font-size: 0.85rem; color: #5c5f52; text-align: center; }
 

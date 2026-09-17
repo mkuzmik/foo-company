@@ -10,7 +10,7 @@
 }
 .article-tag {
   font-size: 0.8rem;
-  color: var(--amber);
+  color: var(--amber-text);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;

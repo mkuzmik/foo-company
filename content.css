@@ -83,7 +83,7 @@ table.offer-table th { background: var(--charcoal); color: #ece7d8; font-weight:
 .journal-card:hover { box-shadow: 0 6px 18px rgba(0,0,0,0.08); transform: translateY(-2px); }
 .journal-media { height: 130px; background: #ded6bf; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
 .journal-body { padding: 1.1rem 1.25rem 1.4rem; }
-.journal-date { font-size: 0.78rem; color: #8a8d7c; text-transform: uppercase; letter-spacing: 0.03em; }
+.journal-date { font-size: 0.78rem; color: #66695a; text-transform: uppercase; letter-spacing: 0.03em; }
 .journal-body h3 { margin: 0.4rem 0 0.5rem; font-size: 1.02rem; }
 .journal-body p { margin: 0 0 0.75rem; color: #4a4d43; font-size: 0.9rem; }
 .journal-link { display: inline-block; font-size: 0.85rem; font-weight: 600; color: var(--charcoal); }
@@ -135,7 +135,7 @@ table.offer-table th { background: var(--charcoal); color: #ece7d8; font-weight:
   font-weight: 700;
 }
 .team-card h3 { margin: 0 0 0.15rem; font-size: 1rem; }
-.team-card .role { font-size: 0.82rem; color: var(--amber); font-weight: 600; margin-bottom: 0.4rem; }
+.team-card .role { font-size: 0.82rem; color: var(--amber-text); font-weight: 600; margin-bottom: 0.4rem; }
 .team-card p.bio { font-size: 0.85rem; color: #5c5f52; margin: 0; }
 
 .impact {
@@ -155,7 +155,7 @@ table.offer-table th { background: var(--charcoal); color: #ece7d8; font-weight:
 .location-card { background: #fff; border-radius: 8px; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.06); }
 .location-card h3 { margin: 0 0 0.3rem; font-size: 1rem; }
 .location-card p { margin: 0.2rem 0; font-size: 0.88rem; color: #4a4d43; }
-.location-tag { display: inline-block; font-size: 0.72rem; background: var(--amber); color: #fff; padding: 0.15rem 0.5rem; border-radius: 4px; margin-top: 0.5rem; }
+.location-tag { display: inline-block; font-size: 0.72rem; background: var(--amber); color: #241505; padding: 0.15rem 0.5rem; border-radius: 4px; margin-top: 0.5rem; }
 
 .testimonials {
   display: grid;
@@ -246,7 +246,7 @@ blockquote cite {
   font-style: italic;
 }
 .clause { display: flex; gap: 0.85rem; margin-bottom: 1.1rem; align-items: baseline; }
-.clause-num { flex: 0 0 auto; min-width: 2.6rem; font-weight: 700; color: var(--amber); font-size: 0.85rem; }
+.clause-num { flex: 0 0 auto; min-width: 2.6rem; font-weight: 700; color: var(--amber-text); font-size: 0.85rem; }
 .clause p { margin: 0; color: #3f4239; font-size: 0.92rem; }
 .clause p + p { margin-top: 0.5rem; }
 .definitions-list { margin: 0; padding: 0; list-style: none; }

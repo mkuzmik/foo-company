@@ -26,7 +26,7 @@
   background: #fff;
   font-size: 0.85rem;
 }
-.shop-empty { text-align: center; color: #8a8d7c; padding: 2rem 0; }
+.shop-empty { text-align: center; color: #66695a; padding: 2rem 0; }
 
 .press-row {
   display: flex;
@@ -37,7 +37,7 @@
   font-size: 0.85rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #8a8d7c;
+  color: #66695a;
   border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
@@ -67,10 +67,10 @@
 }
 .product-body { padding: 1.25rem 1.25rem 1.5rem; }
 .product-body h3 { margin: 0 0 0.25rem; font-size: 1.05rem; }
-.product-tag { font-size: 0.8rem; color: var(--amber); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+.product-tag { font-size: 0.8rem; color: var(--amber-text); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
 .product-body p { color: #4a4d43; font-size: 0.92rem; margin: 0.5rem 0 0.9rem; }
 .price { font-weight: 700; font-size: 1.05rem; }
-.stars { color: var(--amber); font-size: 0.85rem; }
+.stars { color: var(--amber-text); font-size: 0.85rem; }
 .swatches { display: flex; gap: 0.4rem; margin-top: 0.6rem; }
 .swatch { width: 16px; height: 16px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.15); }
 .view-link { display: inline-block; margin-top: 0.75rem; font-size: 0.85rem; font-weight: 600; color: var(--charcoal); }
@@ -99,7 +99,7 @@
 .wishlist-btn.saved {
   background: #faf7ee;
   border-color: var(--amber);
-  color: var(--amber);
+  color: var(--amber-text);
 }
 .wishlist-btn.saved .wishlist-icon::before { content: "♥"; }
 .wishlist-btn:not(.saved) .wishlist-icon::before { content: "♡"; }
@@ -124,7 +124,7 @@ table.sizing th, table.sizing td {
 table.sizing th { background: var(--charcoal); color: #ece7d8; font-weight: 600; }
 
 /* Product detail pages */
-.breadcrumb { font-size: 0.85rem; color: #8a8d7c; margin-bottom: 1.5rem; }
+.breadcrumb { font-size: 0.85rem; color: #66695a; margin-bottom: 1.5rem; }
 .breadcrumb a { text-decoration: none; color: var(--charcoal); }
 .breadcrumb a:hover { text-decoration: underline; }
 
@@ -187,10 +187,10 @@ table.sizing th { background: var(--charcoal); color: #ece7d8; font-weight: 600;
 }
 .review-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.35rem; }
 .review-name { font-weight: 600; font-size: 0.92rem; }
-.review-meta { font-size: 0.75rem; color: #8a8d7c; margin-bottom: 0.5rem; }
+.review-meta { font-size: 0.75rem; color: #66695a; margin-bottom: 0.5rem; }
 .verified { color: #4a5a34; font-weight: 600; }
 .review-card p { margin: 0; font-size: 0.88rem; color: #3f4239; }
-.review-more { text-align: center; font-size: 0.85rem; color: #8a8d7c; padding-top: 0.5rem; }
+.review-more { text-align: center; font-size: 0.85rem; color: #66695a; padding-top: 0.5rem; }
 
 .cross-sell {
   display: grid;
