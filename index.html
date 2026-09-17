@@ -36,8 +36,32 @@
 <section id="shop">
   <h2>The Flock Collection</h2>
   <p class="section-sub">Every product is named after a raven of myth or memory &mdash; each one built for a different kind of distance.</p>
-  <div class="products">
-    <a class="product-card" href="products/huginn-42.html">
+  <div class="shop-toolbar">
+    <div class="shop-filters" id="shop-filters" role="group" aria-label="Filter by category">
+      <button type="button" class="filter-pill active" data-filter="all">All</button>
+      <button type="button" class="filter-pill" data-filter="Pack">Pack</button>
+      <button type="button" class="filter-pill" data-filter="Shelter">Shelter</button>
+      <button type="button" class="filter-pill" data-filter="Shell">Shell</button>
+      <button type="button" class="filter-pill" data-filter="Layer">Layer</button>
+      <button type="button" class="filter-pill" data-filter="Footwear">Footwear</button>
+      <button type="button" class="filter-pill" data-filter="Camp">Camp</button>
+      <button type="button" class="filter-pill" data-filter="Insulation">Insulation</button>
+      <button type="button" class="filter-pill" data-filter="Lighting">Lighting</button>
+      <button type="button" class="filter-pill" data-filter="Accessory">Accessory</button>
+    </div>
+    <label class="shop-sort-label" for="shop-sort">Sort by
+      <select id="shop-sort" class="shop-sort">
+        <option value="featured">Featured</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+        <option value="rating-desc">Rating</option>
+      </select>
+    </label>
+  </div>
+  <p id="shop-empty" class="shop-empty" style="display:none;">No products match that filter.</p>
+
+  <div class="products" id="products-grid">
+    <a class="product-card" href="products/huginn-42.html" data-category="Pack" data-price="259" data-rating="4.8">
       <div class="product-media">🎒</div>
       <div class="product-body">
         <div class="product-tag">Pack</div>
@@ -54,7 +78,7 @@
         <button class="btn quick-add" type="button" data-add-to-cart data-id="huginn-42" data-name="Huginn 42 Trail Pack" data-price="259" data-icon="🎒">Quick add</button>
       </div>
     </a>
-    <a class="product-card" href="products/muninn-tent.html">
+    <a class="product-card" href="products/muninn-tent.html" data-category="Shelter" data-price="389" data-rating="4.7">
       <div class="product-media">⛺</div>
       <div class="product-body">
         <div class="product-tag">Shelter</div>
@@ -70,7 +94,7 @@
         <button class="btn quick-add" type="button" data-add-to-cart data-id="muninn-tent" data-name="Muninn Ultralight Tent" data-price="389" data-icon="⛺">Quick add</button>
       </div>
     </a>
-    <a class="product-card" href="products/corax-shell.html">
+    <a class="product-card" href="products/corax-shell.html" data-category="Shell" data-price="179" data-rating="4.4">
       <div class="product-media">🧥</div>
       <div class="product-body">
         <div class="product-tag">Shell</div>
@@ -86,7 +110,7 @@
         <button class="btn quick-add" type="button" data-add-to-cart data-id="corax-shell" data-name="Corax Rain Shell" data-price="179" data-icon="🧥">Quick add</button>
       </div>
     </a>
-    <a class="product-card" href="products/fable-base-layer.html">
+    <a class="product-card" href="products/fable-base-layer.html" data-category="Layer" data-price="89" data-rating="4.9">
       <div class="product-media">🧦</div>
       <div class="product-body">
         <div class="product-tag">Layer</div>
@@ -102,7 +126,7 @@
         <button class="btn quick-add" type="button" data-add-to-cart data-id="fable-base-layer" data-name="Fable Wool Base Layer" data-price="89" data-icon="🧦">Quick add</button>
       </div>
     </a>
-    <a class="product-card" href="products/onyx-boots.html">
+    <a class="product-card" href="products/onyx-boots.html" data-category="Footwear" data-price="219" data-rating="4.8">
       <div class="product-media">🥾</div>
       <div class="product-body">
         <div class="product-tag">Footwear</div>
@@ -117,7 +141,7 @@
         <button class="btn quick-add" type="button" data-add-to-cart data-id="onyx-boots" data-name="Onyx Ridge Boots" data-price="219" data-icon="🥾">Quick add</button>
       </div>
     </a>
-    <a class="product-card" href="products/roost-hammock.html">
+    <a class="product-card" href="products/roost-hammock.html" data-category="Camp" data-price="149" data-rating="4.3">
       <div class="product-media">🛏️</div>
       <div class="product-body">
         <div class="product-tag">Camp</div>
@@ -133,7 +157,7 @@
         <button class="btn quick-add" type="button" data-add-to-cart data-id="roost-hammock" data-name="Roost Camp Hammock" data-price="149" data-icon="🛏️">Quick add</button>
       </div>
     </a>
-    <a class="product-card" href="products/corvus-jacket.html">
+    <a class="product-card" href="products/corvus-jacket.html" data-category="Insulation" data-price="229" data-rating="4.6">
       <div class="product-media">🦺</div>
       <div class="product-body">
         <div class="product-tag">Insulation</div>
@@ -150,7 +174,7 @@
         <button class="btn quick-add" type="button" data-add-to-cart data-id="corvus-jacket" data-name="Corvus Down Jacket" data-price="229" data-icon="🦺">Quick add</button>
       </div>
     </a>
-    <a class="product-card" href="products/rook-headlamp.html">
+    <a class="product-card" href="products/rook-headlamp.html" data-category="Lighting" data-price="59" data-rating="4.5">
       <div class="product-media">🔦</div>
       <div class="product-body">
         <div class="product-tag">Lighting</div>
@@ -166,7 +190,7 @@
         <button class="btn quick-add" type="button" data-add-to-cart data-id="rook-headlamp" data-name="Rook Headlamp" data-price="59" data-icon="🔦">Quick add</button>
       </div>
     </a>
-    <a class="product-card" href="products/talon-poles.html">
+    <a class="product-card" href="products/talon-poles.html" data-category="Accessory" data-price="119" data-rating="4.7">
       <div class="product-media">🥢</div>
       <div class="product-body">
         <div class="product-tag">Accessory</div>
@@ -207,6 +231,7 @@
 
 <script src="footer.js" data-base="."></script>
 <script src="cart.js"></script>
+<script src="shop-filter.js"></script>
 
 </body>
 </html>

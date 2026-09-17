@@ -1,3 +1,33 @@
+.shop-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+.shop-filters { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.filter-pill {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 20px;
+  padding: 0.35rem 0.9rem;
+  cursor: pointer;
+}
+.filter-pill.active { background: var(--charcoal); color: #fff; border-color: var(--charcoal); }
+.shop-sort-label { font-size: 0.85rem; color: #5c5f52; display: flex; align-items: center; gap: 0.5rem; }
+.shop-sort {
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.15);
+  background: #fff;
+  font-size: 0.85rem;
+}
+.shop-empty { text-align: center; color: #8a8d7c; padding: 2rem 0; }
+
 .press-row {
   display: flex;
   justify-content: center;
