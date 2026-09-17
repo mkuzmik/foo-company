@@ -1,5 +1,6 @@
 User-agent: *
 Disallow: /cart.html
+Disallow: /wishlist.html
 Allow: /
 
 Sitemap: https://mkuzmik.github.io/foo-company/sitemap.xml
